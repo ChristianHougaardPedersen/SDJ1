@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Exam_PlanB/999_ExamAssignment_PlanB/999_ExamAssignment_PlanB.iml" filepath="$PROJECT_DIR$/Exam_PlanB/999_ExamAssignment_PlanB/999_ExamAssignment_PlanB.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Exam_PlanB/Exam_PlanB.iml" filepath="$PROJECT_DIR$/Exam_PlanB/Exam_PlanB.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Exercises/Exercise1_01.iml" filepath="$PROJECT_DIR$/Exercises/Exercise1_01.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Exercises/Exercises.iml" filepath="$PROJECT_DIR$/Exercises/Exercises.iml" />
+      <module fileurl="file://$PROJECT_DIR$/999_ExamAssignment_PlanB/999_ExamAssignment_PlanB.iml" filepath="$PROJECT_DIR$/999_ExamAssignment_PlanB/999_ExamAssignment_PlanB.iml" />
       <module fileurl="file://$PROJECT_DIR$/SDJ1.iml" filepath="$PROJECT_DIR$/SDJ1.iml" />
     </modules>
   </component>
