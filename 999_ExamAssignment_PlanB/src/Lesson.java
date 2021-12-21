@@ -82,10 +82,7 @@ public class Lesson
     {
       if (endTime.equals(latestEndTime) || endTime.isBefore(latestEndTime))
       {
-        if (endTime.isBefore(startTime))
-        {
-          return true;
-        }
+        return endTime.isBefore(startTime);
       }
     }
     return false;
