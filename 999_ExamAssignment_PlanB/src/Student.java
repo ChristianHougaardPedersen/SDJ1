@@ -63,12 +63,12 @@ public class Student
   {
     if (coronaPassport.getDate().isBefore(Date.today()))
     {
-      if (coronaPassport.getReason().equals("Vaccinated") ||
-        coronaPassport.getReason().equals("Tested") && coronaPassport.getDate().numberOfDaysUntil(Date.today())<3 ||
-        coronaPassport.getReason().equals("Infected") && coronaPassport.getDate().numberOfDaysUntil(Date.today())>14 && coronaPassport.getDate().numberOfDaysUntil(Date.today())<180)
-      {
-        return true;
-      }
+      return coronaPassport.getReason().equals("Vaccinated")
+          || coronaPassport.getReason().equals("Tested")
+          && coronaPassport.getDate().numberOfDaysUntil(Date.today()) < 3
+          || coronaPassport.getReason().equals("Infected")
+          && coronaPassport.getDate().numberOfDaysUntil(Date.today()) > 14
+          && coronaPassport.getDate().numberOfDaysUntil(Date.today()) < 180;
     }
 
     return false;
