@@ -3,7 +3,6 @@ public class Grade
   private int grade;
   private Course course;
 
-  //todo check for legal grades
   public Grade(int grade, Course course)
   {
     this.grade = grade;
@@ -30,5 +29,4 @@ public class Grade
     return "Course: " + course.getName() + ", Grade: " + grade;
   }
 
-  //TODO TEST
 }

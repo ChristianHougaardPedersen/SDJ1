@@ -1,5 +1,3 @@
-// TODO TEST
-
 import java.util.ArrayList;
 
 public class Course
@@ -52,6 +50,10 @@ public class Course
 
   public ArrayList<Lesson> getAllLessons()
   {
+    if (getNumberOfLessons() == 0)
+    {
+      throw new IllegalStateException("No lessons added for current course");
+    }
     return schedule;
   }
 
@@ -63,6 +65,10 @@ public class Course
       allTopicsList.add(i.getTopic());
     }
 
+    if (allTopicsList.isEmpty())
+    {
+      throw new IllegalStateException("No topics added for current course");
+    }
     return allTopicsList;
   }
 
@@ -73,7 +79,7 @@ public class Course
     {
       if (i instanceof OnlineLesson)
       {
-        onlineLessons.add((OnlineLesson) i);    // TODO TEST THIS
+        onlineLessons.add((OnlineLesson) i);
       }
     }
 
@@ -95,7 +101,7 @@ public class Course
   }
 
   public ArrayList<DiscordLesson> getDiscordLessons()
-  {     // TODO TEST THIS
+  {
     ArrayList<DiscordLesson> discordLessons = new ArrayList<>();
     for (OnlineLesson i : getOnlineLessons())
     {
@@ -138,16 +144,22 @@ public class Course
     {
       for (Resource j : i.getResources())
       {
-        allResourcesForCourse.add(j);
+        if (!(allResourcesForCourse.contains(j)))
+        {
+          allResourcesForCourse.add(j);
+        }
       }
     }
-
+    if (allResourcesForCourse.isEmpty())
+    {
+      throw new IllegalStateException("No resources added for current course");
+    }
     return allResourcesForCourse;
   }
 
   public String toString()
   {
-    return "Course Name: " + name + ", Number of lessons: "
+    return "\nCourse Name: " + name + ", Number of lessons: "
         + getNumberOfLessons() + "\nNumber of physical lessons: " + (
         getNumberOfLessons() - getOnlineLessons().size())
         + "\nNumber of Zoom-lessons: " + (getOnlineLessons().size()

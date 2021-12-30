@@ -41,8 +41,6 @@ public class DiscordLesson extends OnlineLesson
 
   public String toString()
   {
-    return "Discord Lesson:\n" + super.toString() + "\nChannel: " + channelName;
+    return "\nDiscord Lesson:\n" + super.toString() + "\nChannel: " + channelName;
   }
-
-  //TODO Test this class
 }

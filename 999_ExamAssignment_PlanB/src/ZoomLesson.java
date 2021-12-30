@@ -42,7 +42,7 @@ public class ZoomLesson extends OnlineLesson
 
   public String toString()
   {
-    String s = "Zoom Lesson:\n" + super.toString() + "\nLink: " + link;
+    String s = "\nZoom Lesson:\n" + super.toString() + "\nLink: " + link;
     if (breakoutRooms)
     {
       s += "\nUses breakout rooms";
@@ -53,6 +53,4 @@ public class ZoomLesson extends OnlineLesson
 
     return s;
   }
-
-  //TODO Test this class
 }

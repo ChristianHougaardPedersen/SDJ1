@@ -4,6 +4,15 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/999_ExamAssignment_PlanB/999_ExamAssignment_PlanB.iml" filepath="$PROJECT_DIR$/999_ExamAssignment_PlanB/999_ExamAssignment_PlanB.iml" />
       <module fileurl="file://$PROJECT_DIR$/SDJ1.iml" filepath="$PROJECT_DIR$/SDJ1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TestExam1_CarRental/TestExam1_CarRental.iml" filepath="$PROJECT_DIR$/TestExam1_CarRental/TestExam1_CarRental.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TestExam2_StudentList/TestExam2_StudentList.iml" filepath="$PROJECT_DIR$/TestExam2_StudentList/TestExam2_StudentList.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TestExam3_Book/TestExam3_Book.iml" filepath="$PROJECT_DIR$/TestExam3_Book/TestExam3_Book.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TestExam4_ApartmentComplex/TestExam4_ApartmentComplex.iml" filepath="$PROJECT_DIR$/TestExam4_ApartmentComplex/TestExam4_ApartmentComplex.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TestExam5_HousePlumbing/TestExam5_HousePlumbing.iml" filepath="$PROJECT_DIR$/TestExam5_HousePlumbing/TestExam5_HousePlumbing.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TestExam6_Pizza/TestExam6_Pizza.iml" filepath="$PROJECT_DIR$/TestExam6_Pizza/TestExam6_Pizza.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TestExam7_SiteCollection/TestExam7_SiteCollection.iml" filepath="$PROJECT_DIR$/TestExam7_SiteCollection/TestExam7_SiteCollection.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TestExam8_EmployeeList/TestExam8_EmployeeList.iml" filepath="$PROJECT_DIR$/TestExam8_EmployeeList/TestExam8_EmployeeList.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TestExam9_Order/TestExam9_Order.iml" filepath="$PROJECT_DIR$/TestExam9_Order/TestExam9_Order.iml" />
     </modules>
   </component>
 </project>

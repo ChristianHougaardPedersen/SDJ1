@@ -42,6 +42,4 @@ public abstract class OnlineLesson extends Lesson
 
     return s;
   }
-
-  //TODO Test this class
 }

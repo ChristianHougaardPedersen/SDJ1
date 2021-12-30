@@ -5,10 +5,8 @@ public class Lesson
   private String topic;
   private Date date;
   private Time start, end;
-  //private Resource[] res; - USING ARRAYLIST INSTEAD
   private ArrayList<Resource> res;
 
-  //    Can we use arraylist for res, since no fixed size is given??
   public Lesson(String topic, Date date, Time start, Time end, ArrayList<Resource> res)
   {
     if (topic.equals(""))
@@ -22,20 +20,20 @@ public class Lesson
 
     this.date = date.copy();
 
-    if (hasValidTime(start, end))
-    {
-      this.start = start.copy();
-      this.end = end.copy();
-    }
-    else
+    if (!(hasValidTime(start, end)))
     {
       throw new IllegalArgumentException(
           "Lesson time not valid. Lesson is not allowed to start before 8:20,"
               + " end later than 21:10, "
               + "or have a start time that is after end time");
     }
+    else
+    {
+      this.start = start.copy();
+      this.end = end.copy();
+    }
 
-    this.res = new ArrayList<>();
+    this.res = res;
 
   }
 
@@ -72,18 +70,15 @@ public class Lesson
     return new Time((start.timeUntil(end)).convertToSeconds());
   }
 
-  // NEEDS TESTING + REPHRASING
   public static boolean hasValidTime(Time startTime, Time endTime)
   {
-    Time earliestStartTime = new Time(8, 20, 0);
-    Time latestEndTime = new Time(21, 10, 0);
-    if (startTime.equals(earliestStartTime) || !(startTime.isBefore(
-        earliestStartTime)))
+    int earliestStartTimeInSeconds = 30000;
+    int latestEndTimeInSeconds = 76200;
+
+
+    if (startTime.convertToSeconds() >= earliestStartTimeInSeconds && endTime.convertToSeconds() <= latestEndTimeInSeconds)
     {
-      if (endTime.equals(latestEndTime) || endTime.isBefore(latestEndTime))
-      {
-        return endTime.isBefore(startTime);
-      }
+      return (!(endTime.isBefore(startTime)));
     }
     return false;
   }
@@ -93,7 +88,6 @@ public class Lesson
     return date + " " + start + " - " + end;
   }
 
-  //    CHECK RES-COMPARE
   public boolean equals(Object obj)
   {
     if (!(obj instanceof Lesson))
@@ -107,7 +101,7 @@ public class Lesson
 
   public String toString()
   {
-    String s = "Topic: " + ", Date and time: " + getDateTimeString();
+    String s = "Topic: " + topic + ", Date and time: " + getDateTimeString();
     if (getResources().size() > 0)
     {
       s += "\nResources:";
@@ -118,6 +112,4 @@ public class Lesson
     }
     return s;
   }
-
-  //TODO Test this class
 }

@@ -3,13 +3,6 @@ public class CoronaPassport
   private String reason;
   private Date date;
 
-  /* //TODO MAYBE DELETE THIS??
-  public static final String VACCINATED = "Vaccinated";
-  public static final String TESTED = "Tested";
-  public static final String INFECTED = "Infected";
-
-   */
-
   public CoronaPassport(String reason, Date date)
   {
     this.date = date.copy();
@@ -35,7 +28,5 @@ public class CoronaPassport
     return "Corona Passport:\n" + date + "\n" + reason;
   }
 
-
-  //TODO TEST THIS CLASS
 
 }

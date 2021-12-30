@@ -34,13 +34,15 @@ public class Student
 
   public void addGrade(int grade, Course course)
   {
-    for (Course i : courses)
+    if (courses.contains(course))
     {
-      if (i.getName().equals(course.getName()))
-      {
-        grades.add(new Grade(grade, i));
-        break;
-      }
+      grades.add(new Grade(grade, course));
+    }
+    else
+    {
+      throw new IllegalArgumentException(
+          "Student is not assigned to course: " + course.getName()
+              + " Grade not added");
     }
   }
 
@@ -79,7 +81,7 @@ public class Student
     double avg = 0;
     for (Grade i : grades)
     {
-      avg+= i.getGrade();
+      avg += i.getGrade();
     }
     avg /= grades.size();
     return avg;
@@ -87,13 +89,22 @@ public class Student
 
   public ArrayList<Grade> getAllGrades()
   {
-    return grades;
+    if (!(grades.isEmpty()))
+    {
+      return grades;
+    }
+    else
+      throw new IllegalStateException("Student has no current grades");
   }
 
   public ArrayList<Course> getAllCourses()
   {
-    return  courses;
+    if (!(courses.isEmpty()))
+    {
+      return courses;
+    }
+    else
+      throw new IllegalStateException(
+          "Student not currently assigned any courses");
   }
-
-//TODO test
 }
