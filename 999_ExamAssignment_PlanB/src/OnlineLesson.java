@@ -1,11 +1,10 @@
-import java.util.ArrayList;
 
 public abstract class OnlineLesson extends Lesson
 {
   private boolean cameraRequired;
 
   public OnlineLesson(String topic, Date date, Time start, Time end,
-      ArrayList<Resource> res, boolean camera)
+      Resource[] res, boolean camera)
   {
     super(topic, date, start, end, res);
     this.cameraRequired = camera;

@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class EmployeeList
 {
   private int size;
@@ -80,5 +82,30 @@ public class EmployeeList
 
     return totalEarningPerWeek;
   }
+
+  public String toString()
+  {
+    String s = "All employees:";
+    for (Employee i : getAllEmployees())
+    {
+      s += i;
+    }
+    return s;
+  }
+/*
+  public boolean equals(Object obj)
+  {
+    if (!(obj instanceof EmployeeList))
+    {
+      return false;
+    }
+    EmployeeList other = (EmployeeList) obj;
+    if ()
+    for (int i = 0; i < )
+  }
+
+ */
+
 }
+
 //TODO FINISH THIS

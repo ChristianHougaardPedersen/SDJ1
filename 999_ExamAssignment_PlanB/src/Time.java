@@ -43,7 +43,7 @@ public class Time
     else
     {
       throw new IllegalArgumentException(
-          "Seconds should be value between 0-59");
+          "Seconds should be value between 0-59, and cannot be a negative value");
     }
   }
 
@@ -61,12 +61,18 @@ public class Time
 
   public boolean isBefore(Time time2)
   {
-    return time2.convertToSeconds()>this.convertToSeconds();
+    return time2.convertToSeconds() > this.convertToSeconds();
   }
 
   public Time timeUntil(Time time2)
   {
-    return new Time(time2.convertToSeconds()-this.convertToSeconds());
+    if (this.isBefore(time2))
+    {
+      return new Time(time2.convertToSeconds() - this.convertToSeconds());
+    }
+    else
+      throw new IllegalArgumentException(
+          "Time 2 should not be before current time");
   }
 
   public Time copy()
@@ -77,7 +83,9 @@ public class Time
   public boolean equals(Object obj)
   {
     if (!(obj instanceof Time))
-    {return false;}
+    {
+      return false;
+    }
     Time other = (Time) obj;
     return convertToSeconds() == other.convertToSeconds();
   }
@@ -87,18 +95,28 @@ public class Time
     return String.format("%02d:%02d:%02d", hour, minute, second);
   }
 
-  public static void main(String[] args)
+  // toString - Manual version
+  public String toStringManual()
   {
-    Time t1 = new Time(12, 34, 5);
-    Time t2 = new Time(23,0,0);
-    Time t3 = new Time (8,0,0);
-    System.out.println("Should be true: " + t1.isBefore(t2));
-    System.out.println("Should be false: " + t1.isBefore(t3));
-    System.out.println(t1);
-    System.out.println(t1.timeUntil(t2));
-    System.out.println("Should be true: " + t2.copy().equals(t2));
+    String s = "";
+    if (hour < 10)
+    {
+      s += "0";
+    }
+    s += hour + ":";
+    if (minute < 10)
+    {
+      s += "0";
+    }
+    s += minute + ":";
+    if (second < 10)
+    {
+      s += "0";
+    }
+  s+= second;
 
-    System.out.println(t1.copy());
-
+    return s;
   }
 }
+
+

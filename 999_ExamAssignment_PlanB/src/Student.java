@@ -12,8 +12,8 @@ public class Student
   {
     this.studentNumber = studentNumber;
     this.name = name;
-    this.courses = new ArrayList<>();
-    this.grades = new ArrayList<>();
+    courses = new ArrayList<>();
+    grades = new ArrayList<>();
     this.coronaPassport = null;
   }
 
@@ -67,10 +67,10 @@ public class Student
     {
       return coronaPassport.getReason().equals("Vaccinated")
           || coronaPassport.getReason().equals("Tested")
-          && coronaPassport.getDate().numberOfDaysUntil(Date.today()) < 3
+          && coronaPassport.getDate().numberOfDaysUntil(Date.today()) < 4
           || coronaPassport.getReason().equals("Infected")
           && coronaPassport.getDate().numberOfDaysUntil(Date.today()) > 14
-          && coronaPassport.getDate().numberOfDaysUntil(Date.today()) < 180;
+          && coronaPassport.getDate().numberOfDaysUntil(Date.today()) < 181;
     }
 
     return false;
@@ -87,24 +87,36 @@ public class Student
     return avg;
   }
 
-  public ArrayList<Grade> getAllGrades()
+  public Grade[] getAllGrades()
   {
-    if (!(grades.isEmpty()))
+    if (grades.isEmpty())
     {
-      return grades;
+      throw new IllegalStateException("Student has no current grades.");
     }
-    else
-      throw new IllegalStateException("Student has no current grades");
+    Grade[] allGrades = new Grade[grades.size()];
+    for (int i = 0; i < grades.size(); i++)
+    {
+      allGrades[i] = grades.get(i).copy();
+    }
+
+    return allGrades;
+
   }
 
-  public ArrayList<Course> getAllCourses()
+  public Course[] getAllCourses()
   {
-    if (!(courses.isEmpty()))
+    if (courses.isEmpty())
     {
-      return courses;
-    }
-    else
       throw new IllegalStateException(
           "Student not currently assigned any courses");
+    }
+    Course[] allCourses = new Course[courses.size()];
+    for (int i = 0; i < courses.size(); i++)
+    {
+      allCourses[i] = courses.get(i);
+    }
+
+    return allCourses;
   }
+
 }

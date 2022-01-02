@@ -28,26 +28,5 @@ public class Resource
     return fileName + "." + extension;
   }
 
-
-  //TESTING
-  public static void main(String[] args)
-  {
-    Resource r1 = new Resource("testRes", "PDF");
-    Resource r2 = new Resource("testRes", "PDF");
-    Resource r3 = new Resource("testRes", "pdf");
-    Resource i1 = new Resource("testRes", "jpg");
-    System.out.println("Should be true: " + r1.isPDF());
-    System.out.println("Should be false: " + i1.isPDF());
-    System.out.println("Should be false: " + r1.equals(i1));
-    System.out.println("Should be true: " + r1.equals(r2));
-    System.out.println("Should be true: " + r3.isPDF());
-    System.out.println("Should be false: " + r2.equals(r3));
-
-    System.out.println(r1);
-    System.out.println(r2);
-    System.out.println(i1);
-    System.out.println(r3);
-  }
-
 }
 

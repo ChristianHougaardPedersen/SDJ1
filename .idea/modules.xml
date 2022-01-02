@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/999_ExamAssignment_PlanB/999_ExamAssignment_PlanB.iml" filepath="$PROJECT_DIR$/999_ExamAssignment_PlanB/999_ExamAssignment_PlanB.iml" />
       <module fileurl="file://$PROJECT_DIR$/SDJ1.iml" filepath="$PROJECT_DIR$/SDJ1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TestExam10_DigitalCamera/TestExam10_DigitalCamera.iml" filepath="$PROJECT_DIR$/TestExam10_DigitalCamera/TestExam10_DigitalCamera.iml" />
       <module fileurl="file://$PROJECT_DIR$/TestExam1_CarRental/TestExam1_CarRental.iml" filepath="$PROJECT_DIR$/TestExam1_CarRental/TestExam1_CarRental.iml" />
       <module fileurl="file://$PROJECT_DIR$/TestExam2_StudentList/TestExam2_StudentList.iml" filepath="$PROJECT_DIR$/TestExam2_StudentList/TestExam2_StudentList.iml" />
       <module fileurl="file://$PROJECT_DIR$/TestExam3_Book/TestExam3_Book.iml" filepath="$PROJECT_DIR$/TestExam3_Book/TestExam3_Book.iml" />

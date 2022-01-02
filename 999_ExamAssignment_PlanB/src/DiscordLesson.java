@@ -1,11 +1,10 @@
-import java.util.ArrayList;
 
 public class DiscordLesson extends OnlineLesson
 {
   private String channelName;
 
   public DiscordLesson(String topic, Date date, Time start, Time end,
-      ArrayList<Resource> res, boolean camera, String channel)
+      Resource[] res, boolean camera, String channel)
   {
     super(topic, date, start, end, res, camera);
 

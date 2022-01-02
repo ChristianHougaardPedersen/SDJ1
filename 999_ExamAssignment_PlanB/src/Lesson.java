@@ -5,9 +5,9 @@ public class Lesson
   private String topic;
   private Date date;
   private Time start, end;
-  private ArrayList<Resource> res;
+  private ArrayList<Resource> resources;
 
-  public Lesson(String topic, Date date, Time start, Time end, ArrayList<Resource> res)
+  public Lesson(String topic, Date date, Time start, Time end, Resource[] res)
   {
     if (topic.equals(""))
     {
@@ -33,7 +33,11 @@ public class Lesson
       this.end = end.copy();
     }
 
-    this.res = res;
+    resources = new ArrayList<>();
+    for (Resource i : res)
+    {
+      resources.add(i);
+    }
 
   }
 
@@ -47,15 +51,21 @@ public class Lesson
     return date.copy();
   }
 
-  public ArrayList<Resource> getResources()
+  public Resource[] getResources()
   {
-    return res;
+    Resource[] allResources = new Resource[resources.size()];
+    for (int i = 0; i < resources.size(); i++)
+    {
+      allResources[i] = resources.get(i);
+    }
+
+    return allResources;
   }
 
   public ArrayList<Resource> getAllPDFs()
   {
     ArrayList<Resource> allPDFs = new ArrayList<>();
-    for (Resource i : res)
+    for (Resource i : resources)
     {
       if (i.isPDF())
       {
@@ -67,7 +77,7 @@ public class Lesson
 
   public Time getDuration()
   {
-    return new Time((start.timeUntil(end)).convertToSeconds());
+    return start.timeUntil(end).copy();
   }
 
   public static boolean hasValidTime(Time startTime, Time endTime)
@@ -85,7 +95,7 @@ public class Lesson
 
   public String getDateTimeString()
   {
-    return date + " " + start + " - " + end;
+    return date.copy() + " " + start.copy() + " - " + end.copy();
   }
 
   public boolean equals(Object obj)
@@ -96,16 +106,16 @@ public class Lesson
     }
     Lesson other = (Lesson) obj;
     return topic.equals(other.topic) && start.equals(other.start) && end.equals(
-        other.end) && res.equals(other.res);
+        other.end) && resources.equals(other.resources);
   }
 
   public String toString()
   {
     String s = "Topic: " + topic + ", Date and time: " + getDateTimeString();
-    if (getResources().size() > 0)
+    if (resources.size() > 0)
     {
       s += "\nResources:";
-      for (Resource i : res)
+      for (Resource i : resources)
       {
         s += "\n" + i;
       }

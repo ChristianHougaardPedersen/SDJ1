@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+
 
 public class ZoomLesson extends OnlineLesson
 {
@@ -6,7 +6,7 @@ public class ZoomLesson extends OnlineLesson
   private boolean breakoutRooms;
 
   public ZoomLesson(String topic, Date date, Time start, Time end,
-      ArrayList<Resource> res, boolean camera, String link, boolean breakout)
+      Resource[] res, boolean camera, String link, boolean breakout)
   {
     super(topic, date, start, end, res, camera);
     if (link.equals(""))

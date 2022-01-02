@@ -44,7 +44,6 @@ public class Course
         return true;
       }
     }
-
     return false;
   }
 
@@ -116,21 +115,12 @@ public class Course
 
   public ArrayList<ZoomLesson> getZoomLessonsWithBreakoutRooms()
   {
-    ArrayList<ZoomLesson> zoomLessons = new ArrayList<>();
     ArrayList<ZoomLesson> zoomLessonsWithBreakoutRooms = new ArrayList<>();
     for (OnlineLesson i : getOnlineLessons())
     {
-      if (i.nameOfSoftware().equals("Zoom"))
+      if (i.nameOfSoftware().equals("Zoom") && i.isCameraRequired())
       {
-        zoomLessons.add((ZoomLesson) i);
-      }
-    }
-
-    for (ZoomLesson j : zoomLessons)
-    {
-      if (j.usesBreakoutRooms())
-      {
-        zoomLessonsWithBreakoutRooms.add(j);
+        zoomLessonsWithBreakoutRooms.add((ZoomLesson) i);
       }
     }
 
